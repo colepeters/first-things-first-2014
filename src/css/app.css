@@ -29,14 +29,14 @@ h1 {
 
 .a-dropcap {
   float: left;
-  line-height: 0.8;
+  line-height: 0.81;
   font-size: 5em;
 }
 
 @media (--screen-lg) {
   .a-dropcap {
-    font-size: 8em;
-    line-height: 0.75;
+    font-size: 7.2em;
+    line-height: 0.74;
   }
 }
 
