@@ -1,0 +1,25 @@
+{
+  "name": "first-things-first-2014",
+  "version": "1.0.0",
+  "description": "The First Things First 2014 manifesto, and those who signed their name to it.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colepeters/ftf-static"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cole Peters",
+  "license": "MIT",
+  "devDependencies": {
+    "cssnext": "~1.8.4",
+    "del": "^2.0.2",
+    "gemma": "^0.3.0",
+    "gulp": "^3.9.0",
+    "gulp-hb": "^2.6.5",
+    "gulp-postcss": "5.1.10",
+    "gulp-rename": "^1.2.2",
+    "gulp-webserver": "^0.9.1"
+  }
+}

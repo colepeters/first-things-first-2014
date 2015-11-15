@@ -1,0 +1,31 @@
+/*
+ * First Things First 2014
+ * 
+ */
+
+/* Gemma */
+@import '../../node_modules/gemma/src/gemma.css';
+
+/* FTF styles */
+body {
+  font-family: Lora, Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+h1 {
+  letter-spacing: -0.03em;
+}
+
+.a-bg-charcoal {
+  background-color: #282829;
+}
