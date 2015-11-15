@@ -1,11 +1,11 @@
 <section>
   <h1 class='s-h2 s-red-500 u-mt0 u-align-center'>
-    Signed,
+    The signatories
   </h1>
 
+  <ul class='u-listReset u-p0'>
   {{#each members.signatories}}
-    <p>
-      {{name}}
-    </p>
+    <li class='u-inline'><a href='{{url}}'>{{name}}</a>{{#if @last}}{{else}}, {{/if}}</li>
   {{/each}}
+  </ul>
 </section>
