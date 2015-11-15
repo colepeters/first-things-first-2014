@@ -18,7 +18,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.a-dropcap {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
@@ -26,6 +27,16 @@ h1 {
   letter-spacing: -0.03em;
 }
 
-.a-bg-charcoal {
-  background-color: #282829;
+.a-dropcap {
+  float: left;
+  line-height: 0.8;
+  font-size: 5em;
 }
+
+@media (--screen-lg) {
+  .a-dropcap {
+    font-size: 8em;
+    line-height: 0.75;
+  }
+}
+
