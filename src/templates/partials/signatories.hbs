@@ -1,11 +1,27 @@
 <section>
-  <h1 class='s-h2 s-red-500 u-mt0 u-align-center'>
+  <h1 class='s-h2 s-red-500 u-mt0 u-mb4 u-align-center'>
     The signatories
   </h1>
 
-  <ul class='u-listReset u-p0'>
-  {{#each members.signatories}}
-    <li class='u-inline'><a href='{{url}}'>{{name}}</a>{{#if @last}}{{else}}, {{/if}}</li>
-  {{/each}}
-  </ul>
+  {{! This container set with full height by default;
+      truncated if JavaScript is running via setting is-truncated class }}
+  <div class='js-signatories a-signatories u-pl2 u-pr2'>
+    <ul class='u-listReset a-columns u-p0 u-m0'>
+      {{#each members.signatories}}
+        {{#if url}}
+          <li><a href='{{url}}'>{{name}}</a></li>
+        {{else}}
+          <li>{{name}}</li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+  {{! This container hidden by default; revealed if JavaScript is running }}
+  <div class='u-pt4 u-align-center a-toggleContainer js-toggleContainer'>
+    <button class='c-button a-toggleSignatories u-pl3 u-pr3 u-pt2 u-p2 s-700 js-toggleSignatories'>
+      Show all the signatories
+    </button>
+  </div>
+
 </section>

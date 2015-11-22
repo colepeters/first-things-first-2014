@@ -38,12 +38,18 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('public/css'))
 })
 
+gulp.task('scripts', function () {
+  return gulp.src('src/js/app.js')
+    .pipe(gulp.dest('public/js'))
+})
+
 gulp.task('watch', ['templates', 'styles'], function () {
   gulp.watch('src/css/**/*', ['styles'])
+  gulp.watch('src/js/**/*.js', ['scripts'])
   gulp.watch('src/templates/**/*', ['templates'])
 })
 
-gulp.task('serve', ['clean', 'templates', 'styles', 'watch'], function () {
+gulp.task('serve', ['clean', 'templates', 'styles', 'scripts', 'watch'], function () {
   return gulp.src('public')
     .pipe(webserver({
       livereload: true,
