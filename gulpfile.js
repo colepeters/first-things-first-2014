@@ -4,6 +4,7 @@ var del = require('del')
 var hb = require('gulp-hb')
 var postcss = require('gulp-postcss')
 var rename = require('gulp-rename')
+var uncss = require('gulp-uncss')
 var webserver = require('gulp-webserver')
 
 gulp.task('clean', function () {
@@ -32,6 +33,9 @@ gulp.task('styles', function () {
 
   return gulp.src('src/css/app.css')
     .pipe(postcss(processors))
+    .pipe(uncss({
+      html: ['public/*.html']
+    }))
     .pipe(rename({
       suffix: '.min'
     }))
@@ -60,4 +64,4 @@ gulp.task('serve', ['clean', 'templates', 'styles', 'scripts', 'watch'], functio
     }))
 })
 
-gulp.task('build', ['clean', 'templates', 'styles'])
+gulp.task('build', ['clean', 'templates', 'styles', 'scripts'])

@@ -20,6 +20,7 @@
     "gulp-hb": "^2.6.5",
     "gulp-postcss": "5.1.10",
     "gulp-rename": "^1.2.2",
+    "gulp-uncss": "^1.0.4",
     "gulp-webserver": "^0.9.1"
   }
 }
