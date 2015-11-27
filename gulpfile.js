@@ -34,7 +34,8 @@ gulp.task('styles', function () {
   return gulp.src('src/css/app.css')
     .pipe(postcss(processors))
     .pipe(uncss({
-      html: ['public/*.html']
+      html: ['public/*.html'],
+      ignore: ['.a-signatories.is-truncated']
     }))
     .pipe(rename({
       suffix: '.min'
