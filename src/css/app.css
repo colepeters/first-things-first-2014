@@ -3,8 +3,7 @@
  * 
  */
 
-/* Gemma */
-@import '../../node_modules/gemma/src/gemma.css';
+@import 'gemma/src/gemma.css';
 
 /* FTF styles */
 body {

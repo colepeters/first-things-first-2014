@@ -1,10 +1,12 @@
-var gulp = require('gulp')
-var cssnext = require('cssnext')
+var atImport = require('postcss-import')
+var autoprefixer = require('autoprefixer')
+var cssnano = require('cssnano')
 var del = require('del')
+var gulp = require('gulp')
 var hb = require('gulp-hb')
 var postcss = require('gulp-postcss')
+var postcssPresetEnv = require('postcss-preset-env')
 var rename = require('gulp-rename')
-var uncss = require('gulp-uncss')
 var webserver = require('gulp-webserver')
 
 gulp.task('clean', function () {
@@ -25,18 +27,14 @@ gulp.task('templates', function () {
 })
 
 gulp.task('styles', function () {
-  var processors = [
-    cssnext({
-      compress: true
-    })
+  var plugins = [
+    atImport(),
+    postcssPresetEnv({ stage: 0 }),
+    autoprefixer(),
+    cssnano()
   ]
-
   return gulp.src('src/css/app.css')
-    .pipe(postcss(processors))
-    .pipe(uncss({
-      html: ['public/*.html'],
-      ignore: ['.a-signatories.is-truncated']
-    }))
+    .pipe(postcss(plugins))
     .pipe(rename({
       suffix: '.min'
     }))
